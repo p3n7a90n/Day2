@@ -1,0 +1,137 @@
+// 1
+public class Person {
+
+ private final String name;
+ private final LocalDate dob;
+ private final List<String> hobbies;
+
+ public Person(String name,String dob,String hobbies)
+ {
+
+ this.name=name;
+ this.dob=dob;
+ this.hobbies=hobbies;
+ }
+
+  } 
+
+  Person p1=new Person() ;
+
+
+
+ //2
+
+
+package com.company;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        List<String> temp=new ArrayList<>();
+        temp.add("('sajay',23)");
+        temp.add("('ravi',21)");
+//        for(String t:temp)
+//        {
+//            System.out.println(t.split(",",2)[0]);
+//
+//        }
+
+      temp.stream().map(x->x.split(",",2)[1]).mapToInt(Integer::parseInt).filter(x-> x>22 && x<30 ).average().forEach(System.out::println);
+
+        //System.out.println(temp);
+
+
+    }
+}
+
+
+//3
+
+class Employee
+{
+String deptId;
+String empId;
+String empName;
+int experience;
+	
+
+}
+
+
+class Department
+{
+	List<Employee> employee;
+	String deptName;
+	String deptId;
+
+}
+
+List<Employee> temp;
+
+List<Employee> sortedTemp=temp.sort(Comparator.comparing(Employee.getSalary())
+.thenComparing(Employee.getName()).reversed();
+
+
+List<Employee> sortedFinal=sortedTemp.comparing(Comparator.comparing(Employee.getName()));
+
+
+
+
+
+
+
+
+
+
+//4
+
+
+List<Integer> temp=new ArrayList<>();
+
+List<Integer> distinct=new ArrayList<>();
+
+
+temp.stream().distinct().forEach(x->{
+	distinct.add(x);
+}
+)
+
+or
+
+List<Integer> distinct=temp.stream().distinct().collect(Collectors.toList());
+
+
+//5
+
+class User
+{
+	
+
+private final Set<Account> temp;
+String userId;
+String accntId;
+
+}
+
+class Account
+{
+	String accntId;
+
+
+}
+
+List<Account> temp;
+
+List<Account> sorted=temp.sort(Comparator.comparing(Account.getId())
+.thenComparing(Account.getBalance());
+
+
+
+
+
+
+ 
